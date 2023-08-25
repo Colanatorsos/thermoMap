@@ -1,0 +1,86 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.contribution-graph {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(51, 17px);
+  grid-template-rows: repeat(7, 17px);
+  gap: 2px;
+}
+
+.cell {
+  width: 15px;
+  height: 15px;
+}
+
+.no-contribution {
+  background-color: #ededed;
+}
+
+.low-contribution {
+  background-color: #acd5f2;
+}
+
+.medium-contribution {
+  background-color: #7fa8c9;
+}
+
+.high-contribution {
+  background-color: #527ba0;
+}
+
+.very-high-contribution {
+  background-color: #254e77;
+}
+.dates {
+  letter-spacing: 0em;
+  text-align: left;
+  font-size: 14px;
+  color: #959494;
+  position: absolute;
+  top: -10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+}
+
+.dates::after {
+  content: "";
+  display: inline-block;
+  width: 30px;
+}
+
+.dates span {
+  margin: 0 26px;
+}
+.days {
+  display: flex;
+  flex-direction: column;
+  row-gap: 23px;
+  position: absolute;
+  color: #959494;
+  line-height: 15px;
+  letter-spacing: 0em;
+  text-align: center;
+  left: -24px;
+}
+.tooltip {
+  position: absolute;
+  background-color: black;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 12px;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+.contribution-graph:hover {
+  cursor: pointer;
+}
